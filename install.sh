@@ -2,11 +2,7 @@
 
 cd ~
 
-#install basic utils
-if [ "$(whoami)" -eq "root" ]; then
-	apt-get update
-	apt-get install -y git tmux zsh curl
-fi
+sudo apt-get install -y git tmux zsh curl
 
 #git
 which git
@@ -21,6 +17,10 @@ which zsh
 zsh=$?
 if [ $zsh -eq 0 ]; then
 	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+else
+	RED='\033[0;31m'
+	NC='\033[0m' # No Color
+	printf "zsh ${RED}NOT FOUND${NC}\n"
 fi
 
 #tmux-powerline
