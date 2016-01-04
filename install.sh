@@ -37,6 +37,10 @@ git remote add origin https://github.com/xnum/myrc.git
 git fetch --all
 git reset --hard origin/master
 
+if [ $tmux -eq 0 ]; then
+	bash ~/tmux-powerline/generate_rc.sh
+fi
+
 tmux source-file ~/.tmux.conf
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
