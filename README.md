@@ -1,3 +1,3 @@
 # myrc
 
-```sh -c "$(wget https://github.com/xnum/myrc/raw/master/install.sh -O -)"```
+```sh -c "$(wget https://github.com/xnum/myrc/raw/master/.bin/install.sh -O -)"```
