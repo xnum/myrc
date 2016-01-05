@@ -1,0 +1,14 @@
+[user]
+	email = s000032001@gmail.com
+	name = x000032001
+[core]
+	editor = vim
+[push]
+	default = simple
+[alias]
+	ck = checkout
+	co = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	a = add
