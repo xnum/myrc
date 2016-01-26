@@ -56,8 +56,8 @@ let g:syntastic_c_compiler_options = '-I/usr/include/openmpi'
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = "▲"
+let g:syntastic_error_symbol = 'x'
+let g:syntastic_warning_symbol = '?'
 
 augroup mySyntastic
 	au!
