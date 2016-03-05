@@ -77,8 +77,9 @@ set expandtab
 autocmd FileType cpp nmap <F1> :make<CR>
 
 "folding
-set nofoldenable 
-set foldmethod=syntax 
-set foldcolumn=3
-set foldnestmax=3
-" nnoremap @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')
+set foldenable 
+set foldmethod=indent
+set foldlevel=1
+"set foldcolumn=3
+"set foldnestmax=3
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>

@@ -97,3 +97,5 @@ else
 fi
 
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
+alias wgetunix='wget --http-user=unix104 --http-passwd=upmaki16'
