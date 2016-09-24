@@ -22,6 +22,10 @@ Plugin 'xsbeats/vim-blade'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
+Plugin 'maksimr/vim-jsbeautify'
+
+Plugin 'mhinz/vim-signify'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -83,3 +87,4 @@ set foldlevel=1
 "set foldcolumn=3
 "set foldnestmax=3
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+nnoremap zr zR
