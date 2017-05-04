@@ -53,7 +53,7 @@ plugins=(git)
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/num/.composer/vendor/bin:/home/num/.gtest:/home/num/tau-2.24.1/x86_64/bin"
+export PATH=$PATH:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -88,8 +88,6 @@ fpath=($fpath /opt/zsh-completions/src)
 	 bindkey  "^[[1~"   beginning-of-line
 	 bindkey  "^[[4~"   end-of-line
 
-PATH=$PATH:/home/num/blog/vendor/bin
-
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
 	export TERM='xterm-256color'
 else
@@ -98,4 +96,4 @@ fi
 
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
-alias wgetunix='wget --http-user=unix104 --http-passwd=upmaki16'
+alias chh='source /home/num/chh/chh.sh'
