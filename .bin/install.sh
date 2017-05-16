@@ -39,6 +39,11 @@ git reset --hard origin/master
 
 tmux source-file ~/.tmux.conf
 
+# ch
+cd ~
+git clone https://github.com/xnum/ch.git
+cd ch && chmod +x *.sh && ./install.sh
+
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # install vim plugin
