@@ -88,3 +88,5 @@ set foldlevel=1
 "set foldnestmax=3
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 nnoremap zr zR
+
+autocmd FileType make setlocal noexpandtab
