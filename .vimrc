@@ -26,7 +26,7 @@ Plugin 'maksimr/vim-jsbeautify'
 
 Plugin 'mhinz/vim-signify'
 
-Plug 'fatih/vim-go'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
