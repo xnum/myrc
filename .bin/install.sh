@@ -23,13 +23,6 @@ else
 	printf "zsh ${RED}NOT FOUND${NC}\n"
 fi
 
-#tmux-powerline
-which tmux
-tmux=$?
-if [ $tmux -eq 0 ]; then
-	git clone https://github.com/xnum/tmux-powerline.git
-fi
-
 # update config
 cd ~
 git init
