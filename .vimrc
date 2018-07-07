@@ -26,6 +26,8 @@ Plugin 'maksimr/vim-jsbeautify'
 
 Plugin 'mhinz/vim-signify'
 
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 call vundle#end()
 
 filetype plugin indent on
