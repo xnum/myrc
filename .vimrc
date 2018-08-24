@@ -6,27 +6,19 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'fatih/vim-go'
+
+Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
 
 Plugin 'tomasr/molokai'
 Plugin 'bling/vim-airline'
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-
 Plugin 'scrooloose/syntastic'
 
-Plugin 'tpope/vim-fugitive'
-
-Plugin 'xsbeats/vim-blade'
-Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
-Plugin 'maksimr/vim-jsbeautify'
-
-Plugin 'mhinz/vim-signify'
-
-Plugin 'fatih/vim-go'
+Plugin 'avakhov/vim-yaml'
 
 call vundle#end()
 
@@ -47,10 +39,6 @@ let g:airline_detect_paste=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts = 1
 
-nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
-
-let g:nerdtree_tabs_open_on_console_startup=0
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -66,29 +54,41 @@ let g:syntastic_error_symbol = 'x'
 let g:syntastic_warning_symbol = '?'
 
 augroup mySyntastic
-	au!
-	au FileType tex let b:syntastic_mode = "passive"
+        au!
+        au FileType tex let b:syntastic_mode = "passive"
 augroup END
 
 hi clear SignColumn
 let g:airline#extensions#hunks#non_zero_only = 1
 " =======
 
+let g:neocomplete#enable_at_startup = 1
 
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-autocmd FileType cpp nmap <F1> :make<CR>
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 
 "folding
-set foldenable 
-set foldmethod=indent
-set foldlevel=1
+set foldenable
+set foldmethod=syntax
+set foldlevel=99
 "set foldcolumn=3
 "set foldnestmax=3
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 nnoremap zr zR
+inoremap <C-o> <C-x><C-o>
 
 autocmd FileType make setlocal noexpandtab
+
+let g:go_fmt_command = 'goimports'
+
+set colorcolumn=80
+autocmd FileType gitcommit set colorcolumn=72
+
+highlight ExtraWhitespace ctermbg=darkred guibg=darkcyan
+autocmd BufEnter * if &ft != 'help' | match ExtraWhitespace /\s\+$/ | endif
+autocmd BufEnter * if &ft == 'help' | match none /\s\+$/ | endif
