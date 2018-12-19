@@ -56,6 +56,7 @@ let g:syntastic_warning_symbol = '?'
 augroup mySyntastic
         au!
         au FileType tex let b:syntastic_mode = "passive"
+        au FileType python let b:syntastic_mode = "passive"
 augroup END
 
 hi clear SignColumn
@@ -68,6 +69,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set list
+set listchars=tab:\│\ 
 
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
@@ -92,3 +95,7 @@ autocmd FileType gitcommit set colorcolumn=72
 highlight ExtraWhitespace ctermbg=darkred guibg=darkcyan
 autocmd BufEnter * if &ft != 'help' | match ExtraWhitespace /\s\+$/ | endif
 autocmd BufEnter * if &ft == 'help' | match none /\s\+$/ | endif
+
+autocmd FileType go nmap gj <Plug>(go-info)
+autocmd FileType go nmap gs <Plug>(go-describe)
+autocmd FileType go nmap gh <Plug>(go-doc-vertical)
