@@ -20,6 +20,7 @@ Plugin 'plasticboy/vim-markdown'
 
 Plugin 'avakhov/vim-yaml'
 
+Plugin 'airblade/vim-gitgutter'
 call vundle#end()
 
 filetype plugin indent on
@@ -32,6 +33,7 @@ syntax on
 set hlsearch
 set incsearch
 set cursorline
+set cursorcolumn
 
 
 set laststatus=2
@@ -68,7 +70,7 @@ let g:neocomplete#enable_at_startup = 1
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab
+set noexpandtab
 set list
 set listchars=tab:\│\ 
 
@@ -88,6 +90,9 @@ inoremap <C-o> <C-x><C-o>
 autocmd FileType make setlocal noexpandtab
 
 let g:go_fmt_command = 'goimports'
+let g:go_fmt_options = {
+\ 'goimports': '-local github.com/cobinhood/cobinhood-backend',
+\ }
 
 set colorcolumn=80
 autocmd FileType gitcommit set colorcolumn=72
@@ -99,3 +104,5 @@ autocmd BufEnter * if &ft == 'help' | match none /\s\+$/ | endif
 autocmd FileType go nmap gj <Plug>(go-info)
 autocmd FileType go nmap gs <Plug>(go-describe)
 autocmd FileType go nmap gh <Plug>(go-doc-vertical)
+autocmd FileType go nmap go <Plug>(go-test)
+autocmd FileType go nmap gi :GoFillStruct<CR>

@@ -1,5 +1,4 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/num/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,7 +52,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH=$PATH:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+# export PATH=$PATH:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -95,5 +94,14 @@ else
 fi
 
 PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+# Enable Ctrl-x-e to edit command line
+autoload -U edit-command-line
+# Emacs style
+#zle -N edit-command-line
+bindkey '^e' edit-command-line
+bindkey '^x^e' edit-command-line
+# Vi style:
+#zle -N edit-command-line
+#bindkey -M vicmd v edit-command-line
 
-alias chh='source /home/num/chh/chh.sh'
+alias grep="grep -I -r -n --exclude-dir=vendor"
