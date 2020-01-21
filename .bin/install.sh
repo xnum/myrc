@@ -25,16 +25,21 @@ fi
 # zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# autojump
+git clone git://github.com/wting/autojump.git /tmp/autojump
+/tmp/autojump/install.py
+
+# tmux
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+
+# customize
 rm -rf /tmp/myrc && mkdir -p /tmp/myrc
 git clone https://github.com/xnum/myrc.git /tmp/myrc
 cp /tmp/myrc/.* ~/
-
-git clone git://github.com/wting/autojump.git /tmp/autojump
-/tmp/autojump/install.py
 
 # vim config
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # install vim plugin
 vim +PluginInstall +qall
-vim +GoInstallBinaries +qall
