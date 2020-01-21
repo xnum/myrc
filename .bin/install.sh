@@ -22,12 +22,15 @@ if [ $has_vim -ne 0 ]; then
   echo "vim not found"
 fi
 
+# zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 rm -rf /tmp/myrc && mkdir -p /tmp/myrc
 git clone https://github.com/xnum/myrc.git /tmp/myrc
 cp /tmp/myrc/.* ~/
 
-# zsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone git://github.com/wting/autojump.git /tmp/autojump
+/tmp/autojump/install.py
 
 # vim config
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
