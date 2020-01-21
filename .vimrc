@@ -8,19 +8,10 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'fatih/vim-go'
-
-Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
-
-Plugin 'tomasr/molokai'
 Plugin 'bling/vim-airline'
-
-Plugin 'scrooloose/syntastic'
-
 Plugin 'plasticboy/vim-markdown'
-
 Plugin 'avakhov/vim-yaml'
 
-Plugin 'airblade/vim-gitgutter'
 call vundle#end()
 
 filetype plugin indent on
@@ -33,39 +24,13 @@ syntax on
 set hlsearch
 set incsearch
 set cursorline
-set cursorcolumn
-
 
 set laststatus=2
 let g:airline_detect_paste=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts = 1
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-let g:syntastic_cpp_compiler_options = '-I/usr/include/openmpi -std=c++11 '
-let g:syntastic_c_compiler_options = '-I/usr/include/openmpi'
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_error_symbol = 'x'
-let g:syntastic_warning_symbol = '?'
-
-augroup mySyntastic
-        au!
-        au FileType tex let b:syntastic_mode = "passive"
-        au FileType python let b:syntastic_mode = "passive"
-augroup END
-
-hi clear SignColumn
 let g:airline#extensions#hunks#non_zero_only = 1
 " =======
-
-let g:neocomplete#enable_at_startup = 1
 
 set tabstop=4
 set shiftwidth=4
@@ -73,9 +38,6 @@ set softtabstop=4
 set noexpandtab
 set list
 set listchars=tab:\│\ 
-
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
 
 "folding
 set foldenable
@@ -91,7 +53,7 @@ autocmd FileType make setlocal noexpandtab
 
 let g:go_fmt_command = 'goimports'
 let g:go_fmt_options = {
-\ 'goimports': '-local github.com/cobinhood/cobinhood-backend',
+\ 'goimports': '-local github.com/xnum',
 \ }
 
 set colorcolumn=80
@@ -100,9 +62,3 @@ autocmd FileType gitcommit set colorcolumn=72
 highlight ExtraWhitespace ctermbg=darkred guibg=darkcyan
 autocmd BufEnter * if &ft != 'help' | match ExtraWhitespace /\s\+$/ | endif
 autocmd BufEnter * if &ft == 'help' | match none /\s\+$/ | endif
-
-autocmd FileType go nmap gj <Plug>(go-info)
-autocmd FileType go nmap gs <Plug>(go-describe)
-autocmd FileType go nmap gh <Plug>(go-doc-vertical)
-autocmd FileType go nmap go <Plug>(go-test)
-autocmd FileType go nmap gi :GoFillStruct<CR>
