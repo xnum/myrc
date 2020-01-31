@@ -1,0 +1,76 @@
+// for Windows Terminal
+
+// To view the default settings, hold "alt" while clicking on the "Settings" button.
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
+
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "launchMode": "maximized",
+    "profiles":
+    [
+        {
+            // Make changes here to the powershell.exe profile
+            "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+            "name": "Windows PowerShell",
+            "colorScheme": "Custom",
+            "commandline": "powershell.exe",
+            "hidden": false,
+            "fontFace": "Monaco for Powerline",
+            "cursorShape": "filledBox",
+            "fontSize": 11
+        },
+        {
+            // Make changes here to the cmd.exe profile
+            "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+            "name": "cmd",
+            "commandline": "cmd.exe",
+            "hidden": false
+        },
+        {
+            "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+            "hidden": false,
+            "name": "Azure Cloud Shell",
+            "source": "Windows.Terminal.Azure"
+        }
+    ],
+
+    // Add custom color schemes to this array
+    "schemes": [{
+    "background" : "#242424",
+    "black" : "#36342E",
+    "blue" : "#4646FF",
+    "brightBlack" : "#535755",
+    "brightBlue" : "#6f6ff4",
+    "brightCyan" : "#50ebfc",
+    "brightGreen" : "#1cc470",
+    "brightPurple" : "#a97ead",
+    "brightRed" : "#cf9e72",
+    "brightWhite" : "#eceeee",
+    "brightYellow" : "#e2e234",
+    "cyan" : "#00a2c4",
+    "foreground" : "#f2f2f2",
+    "green" : "#008000",
+    "name" : "Custom",
+    "purple" : "#7b5175",
+    "red" : "#a56434",
+    "white" : "#cfd8d3",
+    "yellow" : "#999606"
+}],
+
+    // Add any keybinding overrides to this array.
+    // To unbind a default keybinding, set the command to "unbound"
+    "keybindings": [
+        { "command": "newTab", "keys": [ "alt+t" ] },
+        { "command": { "action": "switchToTab", "index": 0 }, "keys": ["alt+1"] },
+        { "command": { "action": "switchToTab", "index": 1 }, "keys": ["alt+2"] },
+        { "command": { "action": "switchToTab", "index": 2 }, "keys": ["alt+3"] },
+        { "command": { "action": "switchToTab", "index": 3 }, "keys": ["alt+4"] },
+        { "command": { "action": "switchToTab", "index": 4 }, "keys": ["alt+5"] },
+        { "command": { "action": "switchToTab", "index": 5 }, "keys": ["alt+6"] },
+        { "command": { "action": "switchToTab", "index": 6 }, "keys": ["alt+7"] },
+        { "command": { "action": "switchToTab", "index": 7 }, "keys": ["alt+8"] },
+        { "command": { "action": "switchToTab", "index": 8 }, "keys": ["alt+9"] }
+]
+}
