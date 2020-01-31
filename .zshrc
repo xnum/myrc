@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export EDITOR=vim
+export TERM='xterm-256color'
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -104,11 +105,6 @@ fpath=($fpath /opt/zsh-completions/src)
 bindkey  "^[[1~"   beginning-of-line
 bindkey  "^[[4~"   end-of-line
 
-if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-	export TERM='xterm-256color'
-else
-	export TERM='xterm-color'
-fi
 
 # PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 # Enable Ctrl-x-e to edit command line
