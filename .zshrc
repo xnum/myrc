@@ -70,7 +70,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(autojump git docker docker-compose kubectl helm)
+plugins=(autojump git docker docker-compose kubectl helm history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
