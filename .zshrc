@@ -119,6 +119,14 @@ bindkey '^x^e' edit-command-line
 
 alias grep="grep -I -r -n"
 
+alias ems="emerge --search"
+alias emsd="emerge --searchdesc"
+alias es="sudo emerge --sync --quiet" 
+alias ew="sudo emerge-webrsync"
+alias euw="sudo emerge --ask --update --newuse --deep --with-bdeps=y @world"
+alias euwq="sudo emerge --ask --update --newuse --deep --quiet --with-bdeps=y @world"
+alias edc="sudo emerge --ask --depclean"
+
 # Highlight the current autocomplete option
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
